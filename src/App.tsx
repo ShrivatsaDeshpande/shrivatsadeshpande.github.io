@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Certificates", href: "#certificates" },
-  { name: "Tech Stack", href: "#tech-stack" },
+  { name: "Featured", href: "#featured" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -98,6 +98,27 @@ const PROJECTS = [
     title: "SSA-LAB",
     desc: "Secure Software Architecture lab assignments and implementations.",
     link: "https://github.com/ShrivatsaDeshpande/SSA-LAB"
+  }
+];
+
+const WRITEUPS = [
+  {
+    title: "Satellite Cybersecurity Assessment",
+    date: "Dissertation",
+    desc: "A deep dive into orbital infrastructure vulnerabilities and mitigation strategies.",
+    link: "#"
+  },
+  {
+    title: "Data Exfiltration Detection Pipeline",
+    date: "Security Lab",
+    desc: "Simulating and detecting API-driven data exfiltration and Broken Object Level Authorization (BOLA).",
+    link: "#"
+  },
+  {
+    title: "AWS Secure IaC Platform",
+    date: "Cloud Security",
+    desc: "Architecting a hardened AWS infrastructure with Terraform, Checkov, and least-privilege IAM.",
+    link: "#"
   }
 ];
 
@@ -359,6 +380,86 @@ const App: React.FC = () => {
               <SpotlightCard key={idx} className="p-8 rounded-2xl border border-transparent hover:border-gray-800 transition-colors flex flex-col items-center">
                 <img src={tech.src} alt={tech.name} className="h-14 w-14 mb-4 filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-125 group-hover:-translate-y-2 group-hover:drop-shadow-[0_10px_10px_rgba(34,197,94,0.3)]" />
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">{tech.name}</span>
+              </SpotlightCard>
+            ))}
+          </motion.div>
+        </section>
+
+        {/* FEATURED PROJECT */}
+        <section id="featured" className="max-w-7xl mx-auto px-6 py-32 border-t border-gray-800 relative">
+          <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full pointer-events-none" />
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn} className="max-w-2xl mb-16 relative z-10">
+            <div className="overflow-hidden pb-2">
+              <motion.h2 variants={revealVariants} className="text-3xl md:text-5xl font-bold text-white mb-6">Featured Work</motion.h2>
+            </div>
+            <motion.div variants={fadeIn} className="w-20 h-1 bg-green-500 mb-6"></motion.div>
+          </motion.div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn} className="relative z-10 bg-[#111] border border-gray-800 rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl">
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
+              <div className="flex-1 space-y-6">
+                <h3 className="text-3xl font-black text-white">Data Exfiltration Detection Pipeline</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  A collaborative cybersecurity lab project that simulates API-based data exfiltration and Broken Object Level Authorization (BOLA) in a controlled local environment. It demonstrates vulnerable vs. secure API behavior and applies rule-based detection to identify exfiltration patterns.
+                </p>
+                
+                <div className="space-y-4 pt-4">
+                  <h4 className="text-green-500 font-bold uppercase tracking-wider text-sm">Key Findings</h4>
+                  <ul className="list-none space-y-3">
+                    <li className="flex items-start text-gray-300">
+                      <span className="text-green-500 mr-3">✗</span> 
+                      <span className="text-sm"><strong>Vulnerable Mode:</strong> Allowed unauthorized reads, confirming OWASP API risks (BOLA).</span>
+                    </li>
+                    <li className="flex items-start text-gray-300">
+                      <span className="text-green-500 mr-3">✓</span> 
+                      <span className="text-sm"><strong>Secure Mode:</strong> Enforced ownership checks, denied unauthorized object access, and detected blocked attempts.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="pt-6 flex flex-wrap gap-3">
+                  {["FastAPI", "SQLite", "Pandas", "Pytest", "Detection Rules"].map(tech => (
+                    <span key={tech} className="px-4 py-2 bg-black border border-gray-800 text-gray-400 rounded-full text-xs font-bold uppercase tracking-wider">{tech}</span>
+                  ))}
+                </div>
+
+                <div className="pt-8">
+                  <a href="https://github.com/ShrivatsaDeshpande/data-exfiltration-detection-pipeline" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-black bg-green-500 hover:bg-green-400 rounded transition-all uppercase tracking-wider shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:-translate-y-1">
+                    View on GitHub <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex-1 grid grid-cols-2 gap-4">
+                <img src="/assets/images/exfiltration/api-docs.png" alt="API Docs" className="rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors shadow-lg" />
+                <img src="/assets/images/exfiltration/detection-report.png" alt="Detection Report" className="rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors shadow-lg translate-y-6" />
+                <img src="/assets/images/exfiltration/vulnerable-mode.png" alt="Vulnerable Mode" className="rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors shadow-lg" />
+                <img src="/assets/images/exfiltration/secure-mode.png" alt="Secure Mode" className="rounded-xl border border-gray-800 hover:border-green-500/50 transition-colors shadow-lg translate-y-6" />
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* SECURITY WRITEUPS SECTION */}
+        <section id="writeups" className="max-w-7xl mx-auto px-6 py-20">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn} className="max-w-2xl mb-12">
+            <div className="overflow-hidden pb-2">
+              <motion.h2 variants={revealVariants} className="text-3xl md:text-5xl font-bold text-white mb-6">Security Writeups</motion.h2>
+            </div>
+            <motion.div variants={fadeIn} className="w-20 h-1 bg-green-500 mb-6"></motion.div>
+            <motion.p variants={fadeIn} className="text-gray-400 text-lg">Detailed technical analysis and research documentation.</motion.p>
+          </motion.div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {WRITEUPS.map((writeup, i) => (
+              <SpotlightCard key={i} className="p-8 bg-[#111] border border-gray-800 hover:border-green-500/50 transition-all duration-500 flex flex-col rounded-xl hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,197,94,0.2)]">
+                <div className="text-green-500 font-mono text-sm mb-4 uppercase tracking-widest">{writeup.date}</div>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors duration-300">{writeup.title}</h3>
+                <p className="text-gray-400 leading-relaxed text-sm flex-grow mb-8 group-hover:text-gray-300 transition-colors duration-300">{writeup.desc}</p>
+                
+                <a href={writeup.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-xs font-bold text-gray-500 hover:text-green-400 transition-colors w-max mt-auto uppercase tracking-wider">
+                  Read Writeup <ExternalLink className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </a>
               </SpotlightCard>
             ))}
           </motion.div>
