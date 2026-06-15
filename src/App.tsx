@@ -103,9 +103,9 @@ const PROJECTS = [
 
 const WRITEUPS = [
   {
-    title: "Satellite Cybersecurity Assessment",
-    date: "Dissertation",
-    desc: "A deep dive into orbital infrastructure vulnerabilities and mitigation strategies.",
+    title: "Cybersecurity Assessment of Small Satellites",
+    date: "MSc Dissertation",
+    desc: "Evaluating threats like spoofing, command injection, and firmware compromise using NASA's NOS3 simulator, focusing on COTS risks and RF exposure.",
     link: "#"
   },
   {
