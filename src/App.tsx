@@ -189,7 +189,7 @@ const App: React.FC = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-gray-800 py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-xl font-bold tracking-tighter text-white cursor-pointer hover:scale-105 transition-transform">
-            Shrivatsa<span className="text-green-500 animate-pulse">.</span>
+            Shrivatsa<span className="text-green-500 animate-pulse text-4xl leading-none">.</span>
           </motion.div>
           <div className="hidden lg:flex items-center space-x-6">
             {NAV_LINKS.map((link, i) => (
