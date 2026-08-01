@@ -536,6 +536,9 @@ const App: React.FC = () => {
                   Send Message
                 </motion.button>
               </motion.form>
+              <motion.div variants={fadeIn} className="mt-12 flex justify-center">
+                <img src="./assets/images/logo.png" alt="Shrivatsa Deshpande Logo" className="w-24 h-24 opacity-80 hover:opacity-100 transition-opacity" />
+              </motion.div>
             </div>
           </motion.div>
         </section>
