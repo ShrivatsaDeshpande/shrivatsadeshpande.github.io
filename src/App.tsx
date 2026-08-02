@@ -553,7 +553,7 @@ const App: React.FC = () => {
             <a href="https://github.com/ShrivatsaDeshpande" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors text-gray-400">
               <FaGithub className="w-6 h-6" />
             </a>
-            <a href="https://www.linkedin.com/in/shrivatsadeshpande/" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors text-gray-400">
+            <a href="https://www.linkedin.com/in/shrivatsa-deshpande11/" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors text-gray-400">
               <FaLinkedin className="w-6 h-6" />
             </a>
             <a href="mailto:shrivatsadeshpande11@gmail.com" className="hover:text-green-500 transition-colors text-gray-400">
