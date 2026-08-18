@@ -60,12 +60,19 @@ const CERTIFICATES = [
 ];
 
 const TECH_STACK = [
-  { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  { name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "Linux", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
-  { name: "HTML5", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-  { name: "Google Cloud", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+  { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+  { name: "Go", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" },
+  { name: "FastAPI", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
+  { name: "Flask", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" },
+  { name: "Docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: "Terraform", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" },
+  { name: "AWS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "GCP", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" },
+  { name: "Git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "Linux", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+  { name: "HTML5", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
 ];
 
 const PROJECTS = [
@@ -364,7 +371,12 @@ const App: React.FC = () => {
             <motion.div variants={fadeIn} className="w-20 h-1 bg-green-500 mx-auto mb-10"></motion.div>
 
             <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4 mb-16">
-              {['Metasploit', 'Wireshark', 'Nmap', 'DBMS', 'Data Structures & Algorithms'].map(tag => (
+              {[
+                'Burp Suite', 'OWASP ZAP', 'Metasploit', 'Nmap', 'Wireshark',
+                'Checkov', 'Trivy', 'Semgrep', 'GitHub Actions',
+                'OAuth2', 'JWT', 'OWASP Top 10', 'STRIDE',
+                'DBMS', 'Data Structures & Algorithms'
+              ].map(tag => (
                 <span key={tag} className="px-6 py-3 bg-[#111] border border-gray-800 text-gray-400 rounded-full text-sm font-medium hover:text-green-400 hover:border-green-500/50 transition-colors cursor-default">
                   {tag}
                 </span>
